@@ -1,0 +1,13 @@
+name: SimpleHubDelay
+api: 4.0.0
+version: 0.1
+main: SimpleHubDelay\Main
+author: BeeAZ
+
+commands:
+ hub:
+  description: Teleport To Hub
+  permission: hub.command
+permissions:
+ hub.command:
+  default: true

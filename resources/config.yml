@@ -1,0 +1,3 @@
+delay: 5
+message: "You will be teleported later {SECOND} Second"
+message-success: "Teleport Success"
