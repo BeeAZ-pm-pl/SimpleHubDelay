@@ -13,10 +13,10 @@ class UpdateTask extends Task{
   
  public function __construct(Main $main, $name){
   $this->main = $main;
-  $this->playerName = $name;
+  $this->name = $name;
  }
  public function onRun(): void{
-  $player =  $this->main->getServer()->getPlayerExact($this->playerName);
+  $player =  $this->main->getServer()->getPlayerExact($this->name);
   $player->teleport($this->main->getServer()->getWorldManager()->getDefaultWorld()->getSafeSpawn());
   $player->sendMessage($this->main->getConfig()->get("message-success"));
  }
