@@ -17,7 +17,9 @@ class UpdateTask extends Task{
  }
  public function onRun(): void{
   $player =  $this->main->getServer()->getPlayerExact($this->name);
+  if($player->isOnline()){
   $player->teleport($this->main->getServer()->getWorldManager()->getDefaultWorld()->getSafeSpawn());
   $player->sendMessage($this->main->getConfig()->get("message-success"));
  }
+}
 }
