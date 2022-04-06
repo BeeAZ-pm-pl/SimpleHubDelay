@@ -5,9 +5,9 @@ main: BeeAZZ\SimpleHubDelay\Main
 author: BeeAZZ
 
 commands:
- hub:
-  description: Teleport To Hub
-  permission: hub.command
+  hub:
+    description: Teleport To Hub
+    permission: hub.command
 permissions:
- hub.command:
-  default: true
+  hub.command:
+    default: true
