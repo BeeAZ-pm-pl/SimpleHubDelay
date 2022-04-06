@@ -1,25 +1,25 @@
 <?php
+declare(strict_types=1);
 
 namespace BeeAZZ\SimpleHubDelay;
 
 use pocketmine\player\Player;
 use pocketmine\scheduler\Task;
-use BeeAZZ\SimpleHubDelay\Main;
 
 class UpdateTask extends Task{
- 
- private $main;
- private $name;
-  
- public function __construct(Main $main, $name){
-  $this->main = $main;
-  $this->name = $name;
- }
- public function onRun(): void{
-  if($this->main->getServer()->getPlayerExact($this->name) !== null){
-  $player =  $this->main->getServer()->getPlayerExact($this->name);
-  $player->teleport($this->main->getServer()->getWorldManager()->getDefaultWorld()->getSafeSpawn());
-  $player->sendMessage($this->main->getConfig()->get("message-success"));
- }
-}
+
+	protected Main $main;
+	protected Player $player;
+
+	public function __construct(Main $main, Player $player){
+		$this->main = $main;
+		$this->player = $player;
+	}
+
+	public function onRun() : void{
+		if($this->player->isOnline()){
+			$this->player->teleport($this->main->getServer()->getWorldManager()->getDefaultWorld()->getSafeSpawn());
+			$this->player->sendMessage($this->main->getConfig()->get("message-success"));
+		}
+	}
 }
