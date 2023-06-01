@@ -19,7 +19,7 @@ class Main extends PluginBase{
 				$sender->sendMessage($this->getConfig()->get("message-useingame"));
 				return true;
 			}
-			if($sender->hasPermission("hub.command")){
+			if($sender->hasPermission("simplehubdelay.command")){
 				$message = str_replace("{SECONDS}", $this->getConfig()->get("delay"), $this->getConfig()->get("message-delay"));
 				$sender->sendMessage($message);
 				$this->getScheduler()->scheduleDelayedTask(new UpdateTask($this, $sender), 20 * (int)$this->getConfig()->get("delay"));
