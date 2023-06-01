@@ -7,7 +7,7 @@ author: BeeAZZ
 commands:
   hub:
     description: Teleport To Hub
-    permission: hub.command
+    permission: simplehubdelay.command
 permissions:
-  hub.command:
+  simplehubdelay.command:
     default: true
